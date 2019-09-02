@@ -2,6 +2,7 @@
 
 class SieveSundaram
     def initialize(value)
+        @primeNumbers = []
         @limit = value.to_i
         if ((@limit % 2) == 0)
             @limit -= 1
@@ -18,17 +19,25 @@ class SieveSundaram
                 @sieve[2 * i * j + i + j - 1] = true
             end
         end
+        self.GetPrimeNumbersList
     end
 
-    def ShowPrimeNumbers
+    def GetPrimeNumbersList
         count = -1
         while (count < (@length - 1))
             count += 1
              if (!@sieve[count])
-                puts (2 * count + 3)
+                @primeNumbers.insert(-1, 2 * count + 3)
              end
         end
     end
+
+    def ShowPrimeNumbers
+        for i in 0..@primeNumbers.length
+            puts @primeNumbers[i]
+        end
+    end
+
 end
 
 sieveSundaram = SieveSundaram.new(ARGV[0])
