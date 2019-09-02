@@ -4,6 +4,7 @@ Sieve Sundaram -  simple method for finding prime numbers
 I wrote this scripts, after i had read this note https://habr.com/ru/post/465737/.
 
 # Example
+```
 ruby SieveSundaram.rb 100
 3
 5
@@ -29,3 +30,4 @@ ruby SieveSundaram.rb 100
 83
 89
 97
+```
