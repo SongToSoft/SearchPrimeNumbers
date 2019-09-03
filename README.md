@@ -1,11 +1,12 @@
-# SieveSundaram
-Sieve Sundaram -  simple method for finding prime numbers
+# SearchPrimeNumbers
+Sundarams Sieve / Eratosthenes Sieve -  simple method for finding prime numbers
 
 I wrote this scripts, after i had read this note https://habr.com/ru/post/465737/.
 
 # Example
 ```
-ruby SieveSundaram.rb 100
+ruby SundaramsSieve.rb 100 (or ruby EratosthenesSieve.rb 100)
+2
 3
 5
 7
