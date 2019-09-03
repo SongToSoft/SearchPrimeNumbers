@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-class SieveSundaram
+class SundaramsSieve
     def initialize(value)
         @primeNumbers = []
         @limit = value.to_i
@@ -19,28 +19,22 @@ class SieveSundaram
                 @sieve[2 * i * j + i + j - 1] = true
             end
         end
-        self.GetPrimeNumbersList
     end
 
-    def GetPrimeNumbersList
-        count = -1
-        while (count < (@length - 1))
-            count += 1
-             if (!@sieve[count])
-                @primeNumbers.insert(-1, 2 * count + 3)
-             end
-        end
-        return @primeNumbers
-    end
 
     def ShowPrimeNumbers
-        for i in 0..@primeNumbers.length
-            puts @primeNumbers[i]
+        count = -1
+        puts 2
+        while (count < (@length - 1))
+            count += 1
+            if (!@sieve[count])
+               puts (2 * count + 3)
+            end
         end
     end
 
 end
 
-sieveSundaram = SieveSundaram.new(ARGV[0])
+sieveSundaram = SundaramsSieve.new(ARGV[0])
 sieveSundaram.Solve
 sieveSundaram.ShowPrimeNumbers

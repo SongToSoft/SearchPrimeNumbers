@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#Script for testing SieveSundaram
+#Script for testing SundaramsSieve and EratosthenesSieve
 
 function StartTest 
 {
     # $1 - max value 
-    ruby SieveSundaram.rb $1 > testfile
+    ruby SundaramsSieve.rb $1 > testfile
     while read number
     do
         if [ "$number" != "" ]
