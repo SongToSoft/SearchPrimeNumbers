@@ -30,6 +30,7 @@ class SieveSundaram
                 @primeNumbers.insert(-1, 2 * count + 3)
              end
         end
+        return @primeNumbers
     end
 
     def ShowPrimeNumbers
