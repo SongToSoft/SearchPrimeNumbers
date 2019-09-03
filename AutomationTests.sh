@@ -41,7 +41,6 @@ function IsPrimeNumber
 echo "Sundarams Sieve:"
 ruby SundaramsSieve.rb 1000 > testfile
 StartTest 1
-rm -rf testfile
 
 echo "Eratosthenes Sieve:"
 ruby EratosthenesSieve.rb 1000 > testfile
