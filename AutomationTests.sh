@@ -4,8 +4,6 @@
 
 function StartTest 
 {
-    # $1 - max value 
-    ruby SundaramsSieve.rb $1 > testfile
     while read number
     do
         if [ "$number" != "" ]
@@ -36,4 +34,13 @@ function IsPrimeNumber
 
 }
 
-StartTest 1000
+echo "Sundarams Sieve:"
+ruby SundaramsSieve.rb 100 > testfile
+StartTest
+rm -rf testfile
+
+echo "Eratosthenes Sieve:"
+ruby EratosthenesSieve.rb 100 > testfile
+StartTest
+
+rm -rf testfile
