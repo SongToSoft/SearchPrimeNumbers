@@ -4,6 +4,7 @@
 
 function StartTest 
 {
+    # $1 == 0 - show only FAIL, $1 == 1 - show all results
     while read number
     do
         if [ "$number" != "" ]
@@ -13,7 +14,10 @@ function StartTest
             then
                 echo "FAILED:" $number "is non prime number"
             else
-                echo "PASS:" $number "is prime number"
+                if [ $1 -eq 1 ]
+                then
+                    echo "PASS:" $number "is prime number"
+                fi
             fi
         fi
     done < testfile
@@ -36,11 +40,11 @@ function IsPrimeNumber
 
 echo "Sundarams Sieve:"
 ruby SundaramsSieve.rb 100 > testfile
-StartTest
+StartTest 1
 rm -rf testfile
 
 echo "Eratosthenes Sieve:"
 ruby EratosthenesSieve.rb 100 > testfile
-StartTest
+StartTest 1
 
 rm -rf testfile
