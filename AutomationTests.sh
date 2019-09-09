@@ -12,11 +12,11 @@ function StartTest
             IsPrimeNumber $number
             if [ $? -eq 0 ]
             then
-                echo "FAILED:" $number "is non prime number"
+                echo -e "\e[31mFAIL\e[0m:" $number "is non prime number"
             else
                 if [ $1 -eq 1 ]
                 then
-                    echo "PASS:" $number "is prime number"
+                    echo -e "\e[32mPASS\e[0m:" $number "is prime number"
                 fi
             fi
         fi
@@ -45,5 +45,3 @@ StartTest 1
 echo "Eratosthenes Sieve:"
 ruby EratosthenesSieve.rb 1000 > testfile
 StartTest 1
-
-rm -rf testfile
